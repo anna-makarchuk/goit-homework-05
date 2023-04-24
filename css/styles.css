@@ -86,12 +86,14 @@ body {
   display: flex;
   gap: 40px;
 }
-.link {
-  transition: color var(--anim-fast);
+
+.header-link:hover,
+.header-link:focus {
+  color: var(--ocean);
 }
 
-.link:hover,
-.link:focus {
+.address-link:hover,
+.address-link:focus {
   color: var(--ocean);
 }
 .header-container {
@@ -112,13 +114,17 @@ body {
 .header-link::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 
   display: block;
   width: 100%;
   height: 4px;
   border-radius: 2px;
+}
+
+.header-link.current {
+  color: var(--ocean);
 }
 .header-link.current::after {
   background-color: var(--ocean);
@@ -409,6 +415,10 @@ body {
   gap: 16px;
 }
 
+.footer-link {
+  transition: background-color var(--anim-fast);
+}
+
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--green);
@@ -522,9 +532,14 @@ body {
   color: var(--cloud);
 }
 
-.portfolio-items-item:hover .overlay {
+.portfolio-link:hover .overlay,
+.portfolio-link:focus .overlay {
   transform: translateY(0);
 }
+
+/* .portfolio-items-item:focus .overlay {
+  transform: translateY(0);
+} */
 /* Modal styles */
 
 .backdrop {
@@ -547,8 +562,9 @@ body {
 
 .modal {
   position: absolute;
-  top: calc(50% - 292px);
-  left: calc(50% - 204px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   padding: 24px;
   width: 408px;
@@ -559,6 +575,18 @@ body {
   border-radius: 4px;
 }
 .modal-btn {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
   margin-left: auto;
+
+  border-radius: 50%;
+  background: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-icon {
+  fill: var(--navy-blue);
 }
