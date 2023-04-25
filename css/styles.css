@@ -59,6 +59,17 @@ body {
   padding-right: 15px;
 }
 /* header */
+.header {
+  border-bottom: 1px solid var(--cornflower);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
 .main-logo {
   font-family: var(--secondary-font);
   font-weight: 800;
@@ -87,19 +98,6 @@ body {
   gap: 40px;
 }
 
-.header-link:hover,
-.header-link:focus {
-  color: var(--ocean);
-}
-
-.address-link:hover,
-.address-link:focus {
-  color: var(--ocean);
-}
-.header-container {
-  display: flex;
-  align-items: center;
-}
 .header-nav {
   display: flex;
   align-items: center;
@@ -110,6 +108,8 @@ body {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+
+  transition: color var(--anim-fast);
 }
 .header-link::after {
   content: "";
@@ -129,15 +129,21 @@ body {
 .header-link.current::after {
   background-color: var(--ocean);
 }
+
+.header-link:hover,
+.header-link:focus {
+  color: var(--ocean);
+}
 .address-link {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+
+  transition: color var(--anim-fast);
 }
-.header {
-  border-bottom: 1px solid var(--cornflower);
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+.address-link:hover,
+.address-link:focus {
+  color: var(--ocean);
 }
 
 /* hero */
@@ -352,7 +358,7 @@ body {
   border: 1px solid var(--light-slate);
   border-radius: 4px;
   color: var(--light-slate);
-  transition: color 250ms var(--anim-fast), border-color var(--anim-fast);
+  transition: color var(--anim-fast), border-color var(--anim-fast);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -586,7 +592,21 @@ body {
   border-radius: 50%;
   background: var(--cornflower);
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  transition: background-color var(--anim-fast);
 }
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--ocean);
+}
+
 .modal-icon {
   fill: var(--navy-blue);
+  transition: fill var(--anim-fast);
+}
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+  fill: var(--white);
 }
